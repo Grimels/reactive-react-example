@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2020",
+    "jsx": "react",
+    "strict": true,
+
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "Styles/*": ["src/styles/*"],
+      "Constants/*": ["src/constants/*"],
+      "Components/*": ["src/components/*"],
+      "DataServices/*": ["src/dataservices/*"],
+      "TestUtils/*": ["src/testUtils/*"],
+      "Utils/*": ["src/utils/*"],
+      "Store/*": ["src/store/*"],
+      "Hooks/*": ["src/hooks/*"],
+      "Types/*": ["src/types/*"]
+    },
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
