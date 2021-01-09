@@ -1,0 +1,10 @@
+
+.article-card {
+  display: flex;
+  border-radius: 5px;
+  background-color: map-get($colors, secondary);
+}
+
+.article-title {
+  font-family: 'Roboto';
+}
