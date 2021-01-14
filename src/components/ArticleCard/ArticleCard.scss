@@ -1,10 +1,40 @@
+@import "../../styles/variables";
 
 .article-card {
   display: flex;
+  justify-content: space-between;
+
+  padding: 0.5em 1em;
+  margin: 0.5em;
+
   border-radius: 5px;
   background-color: map-get($colors, secondary);
 }
 
+.article-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.article-publisherId {
+  font-weight: bold;
+  font-size: 1.2em;
+
+  margin-bottom: 0;
+
+  font-family: monospace;
+}
+
+
+.article-title, .article-description {
+  font-family: 'Roboto', serif;
+
+  margin: 10px 0;
+}
+
 .article-title {
-  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1.2em;
 }

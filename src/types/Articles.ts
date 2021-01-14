@@ -1,1 +1,7 @@
-export type Article = string;
+export interface Article {
+  title: string;
+  description: string;
+  publisherId: string;
+}
+
+export type Publisher = string;

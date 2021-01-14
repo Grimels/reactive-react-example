@@ -5,13 +5,13 @@ import { ArticleCard } from 'Components/ArticleCard';
 import { articlesDataService } from 'DataServices/ArticlesDataService';
 import { useDataServiceCall } from 'Hooks/useDataServiceCall';
 
-import { Article } from 'Types/Articles';
+import { Article, Publisher } from 'Types/Articles';
 import { STATUS } from 'Constants/state';
 
-export const ArticlesContainer: React.FC = () => {
-  const [status, articles, error] = useDataServiceCall<Array<Article>>(() => articlesDataService.getArticles('P0'));
+export const ArticlesContainer: React.FC<{ publisher: Publisher }> = ({ publisher }) => {
+  const [status, articles, error] = useDataServiceCall<Array<Article>>(() => articlesDataService.getArticles(publisher));
 
-  const renderArticle = (article: Article) => <ArticleCard key={article} article={article} />;
+  const renderArticle = (article: Article) => <ArticleCard key={article.title} article={article} />;
 
   switch (status) {
     case STATUS.SUCCESS:
