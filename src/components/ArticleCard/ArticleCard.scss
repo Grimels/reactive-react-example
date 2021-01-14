@@ -9,6 +9,7 @@
 
   border-radius: 5px;
   background-color: map-get($colors, secondary);
+  color: map-get($colors, text);
 }
 
 .article-card-info {

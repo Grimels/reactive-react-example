@@ -2,14 +2,15 @@ import * as React from 'react';
 
 import { ArticleCard } from 'Components/ArticleCard';
 
-import { articlesDataService } from 'DataServices/ArticlesDataService';
-import { useDataServiceCall } from 'Hooks/useDataServiceCall';
+import { useServerSentEvents } from 'Hooks/useServerSentEvents';
 
 import { Article, Publisher } from 'Types/Articles';
 import { STATUS } from 'Constants/state';
 
+import './ArticlesContainer.scss';
+
 export const ArticlesContainer: React.FC<{ publisher: Publisher }> = ({ publisher }) => {
-  const [status, articles, error] = useDataServiceCall<Array<Article>>(() => articlesDataService.getArticles(publisher));
+  const [status, articles, error] = useServerSentEvents<Article>(`/api/hub/articles/${publisher}`);
 
   const renderArticle = (article: Article) => <ArticleCard key={article.title} article={article} />;
 
