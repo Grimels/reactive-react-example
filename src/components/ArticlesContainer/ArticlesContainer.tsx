@@ -10,7 +10,7 @@ import { STATUS } from 'Constants/state';
 import './ArticlesContainer.scss';
 
 export const ArticlesContainer: React.FC<{ publisher: Publisher }> = ({ publisher }) => {
-  const [status, articles, error] = useServerSentEvents<Article>(`/api/hub/articles/${publisher}`);
+  const [status, articles, error] = useServerSentEvents<Article>(`/api/hub/articles/${publisher}/sse`);
 
   const renderArticle = (article: Article) => <ArticleCard key={article.title} article={article} />;
 
