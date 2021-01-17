@@ -12,7 +12,7 @@ export const App: React.FC = () => {
   return (
     <main className="app">
       <section>
-        <h1>Hello World!</h1>
+        <h1>All Publisher Articles:</h1>
         <ArticlesContainer publisher={publisher} />
       </section>
     </main>

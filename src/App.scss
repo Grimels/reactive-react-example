@@ -1,11 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+
+  background-color: #f5f5f7;
 }
 
 .app {
   margin: 0;
-  padding: 0;
+  padding: 2em;
 
   display: flex;
   flex: 1 1 auto;

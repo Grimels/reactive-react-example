@@ -23,7 +23,12 @@
       "Hooks/*": ["src/hooks/*"],
       "Types/*": ["src/types/*"]
     },
+
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true
   },
+  "include": ["./src/components/", "./typings"],
   "exclude": [
     "node_modules"
   ]

@@ -51,7 +51,11 @@ export default {
         ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
         use: [
           {
