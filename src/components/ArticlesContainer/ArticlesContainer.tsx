@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { ArticleCard } from 'Components/ArticleCard';
 
-import { useServerSentEvents } from 'Hooks/useServerSentEvents';
+import { useWebsocket } from 'Hooks/useWebsocket';
 
 import { Article, Publisher } from 'Types/Articles';
 import { STATUS } from 'Constants/state';
@@ -10,9 +10,9 @@ import { STATUS } from 'Constants/state';
 import './ArticlesContainer.scss';
 
 export const ArticlesContainer: React.FC<{ publisher: Publisher }> = ({ publisher }) => {
-  const [status, articles, error] = useServerSentEvents<Article>(`/api/hub/articles/${publisher}/sse`);
+  const [status, articles, error] = useWebsocket<Article>(`/api/hub/articles`, publisher);
 
-  const renderArticle = (article: Article) => <ArticleCard key={article.title} article={article} />;
+  const renderArticle = (article: Article) => <ArticleCard key={`${article.publisherId}::${article.title}`} article={article} />;
 
   switch (status) {
     case STATUS.SUCCESS:
